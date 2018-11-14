@@ -28,6 +28,7 @@ public class BullyController : MonoBehaviour {
 	[SerializeField]
 	private bool gameOver = false;
 	private float startGameOverTime;
+    public FadeEffectController ActivateFade;
 
 	// Use this for initialization
 	void Start () {
@@ -64,6 +65,9 @@ public class BullyController : MonoBehaviour {
 				//moveTowardPlayer();
 				player.GetComponent<MainCharacterController> ().DisableControls ();
 				GameObject.Find ("Support Character").GetComponent<SuppCharController> ().DisableControls ();
+
+
+                ActivateFade.Activate = true;
 			} else {
 				EnemyDetectionUI.gameObject.GetComponent<SpriteRenderer> ().color = Color.yellow;
 			}

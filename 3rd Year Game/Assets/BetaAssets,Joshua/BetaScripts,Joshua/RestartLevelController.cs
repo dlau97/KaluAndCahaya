@@ -6,6 +6,8 @@ public class RestartLevelController : MonoBehaviour {
 
     public GameObject Player;
     public Vector3 CheckPointLocation;
+    public FadeEffectController ActivateFade;
+    public bool Fallen = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,12 +16,20 @@ public class RestartLevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Fallen == true)
+        {
+            if (ActivateFade.fadeInTimer > 0f)
+            {
+                Player.transform.position = CheckPointLocation;
+                Fallen = false;
+            }
+        }
+    }
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Player") {
-            Player.transform.position = CheckPointLocation;
+            ActivateFade.Activate = true;
+            Fallen = true;
 		}
 	}
 }
