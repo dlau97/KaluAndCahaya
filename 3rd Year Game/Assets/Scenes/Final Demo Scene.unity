@@ -159,6 +159,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e51b53b4d506c4ba58724e3051f409, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &263925703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1784817482868832, guid: f218b583d0a741849a07d0d6cf0052c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1176293949}
 --- !u!4 &324215069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4661700078342120, guid: a3e02d8ed69cbf24f85b88de4eb9e929,
@@ -268,6 +273,16 @@ Prefab:
       value: FinalLevel
       objectReference: {fileID: 0}
     - target: {fileID: 114659215170406210, guid: a3e02d8ed69cbf24f85b88de4eb9e929,
+        type: 2}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 263925703}
+    - target: {fileID: 114659215170406210, guid: a3e02d8ed69cbf24f85b88de4eb9e929,
+        type: 2}
+      propertyPath: ActivateFade
+      value: 
+      objectReference: {fileID: 2122963499}
+    - target: {fileID: 114087589877521702, guid: a3e02d8ed69cbf24f85b88de4eb9e929,
         type: 2}
       propertyPath: ActivateFade
       value: 
@@ -486,6 +501,35 @@ Prefab:
     - target: {fileID: 1311946950733858, guid: f218b583d0a741849a07d0d6cf0052c6, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114339028451714420, guid: f218b583d0a741849a07d0d6cf0052c6,
+        type: 2}
+      propertyPath: FadeMultiplier
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114339028451714420, guid: f218b583d0a741849a07d0d6cf0052c6,
+        type: 2}
+      propertyPath: SetTimer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 23336391972763606, guid: f218b583d0a741849a07d0d6cf0052c6,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23336391972763606, guid: f218b583d0a741849a07d0d6cf0052c6,
+        type: 2}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23336391972763606, guid: f218b583d0a741849a07d0d6cf0052c6,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311946950733858, guid: f218b583d0a741849a07d0d6cf0052c6, type: 2}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f218b583d0a741849a07d0d6cf0052c6, type: 2}

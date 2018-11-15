@@ -5,6 +5,8 @@ using UnityEngine;
 public class RestartLevelController : MonoBehaviour {
 
     public GameObject Player;
+	public GameObject SuppChar;
+	public GameObject MainCamera;
     public Vector3 CheckPointLocation;
     public FadeEffectController ActivateFade;
     public bool Fallen = false;
@@ -21,6 +23,8 @@ public class RestartLevelController : MonoBehaviour {
 			if (ActivateFade.fadeInTimer > 0f )
             {
                 Player.transform.position = CheckPointLocation;
+				SuppChar.transform.position = CheckPointLocation;
+				MainCamera.transform.position = new Vector3(MainCamera.transform.position.x, CheckPointLocation.y, MainCamera.transform.position.z);
                 Fallen = false;
             }
         }

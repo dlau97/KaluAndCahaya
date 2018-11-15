@@ -44,21 +44,30 @@ public class FadeEffectController : MonoBehaviour {
             Activate = false;
         }
 
-        if (fadeOutTimer > 0f)
-        {
-            fadeOutTimer -= Time.deltaTime;
-            FadeAlpha.a += FadeMultiplier * Time.deltaTime;
-            FadePanel.color = FadeAlpha;
-            if (fadeOutTimer <= 0f)
-            {
-                fadeInTimer = SetTimer;
-            }
-        }
-        if (fadeInTimer > 0f)
-        {
-            fadeInTimer -= Time.deltaTime;
-            FadeAlpha.a -= FadeMultiplier * Time.deltaTime;
-            FadePanel.color = FadeAlpha;
-        }
+		if (fadeOutTimer > 0f) {
+			fadeOutTimer -= Time.deltaTime;
+			FadeAlpha.a += FadeMultiplier * Time.deltaTime;
+			if (FadeAlpha.a > 1f) {
+				FadeAlpha.a = 1f;
+			}
+			FadePanel.color = FadeAlpha;
+			if (fadeOutTimer <= 0f) {
+				fadeInTimer = SetTimer;
+				FadeAlpha.a = 1f;
+				FadePanel.color = FadeAlpha;
+			}
+		} 
+		if (fadeInTimer > 0f) {
+			fadeInTimer -= Time.deltaTime;
+			FadeAlpha.a -= FadeMultiplier * Time.deltaTime;
+			if (FadeAlpha.a < 0f) {
+				FadeAlpha.a = 0f;
+			}
+			FadePanel.color = FadeAlpha;
+			if (fadeInTimer <= 0f) {
+				FadeAlpha.a = 0f;
+				FadePanel.color = FadeAlpha;
+			}
+		} 
     }
 }
