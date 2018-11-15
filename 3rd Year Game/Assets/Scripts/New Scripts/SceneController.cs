@@ -16,8 +16,8 @@ public class SceneController : MonoBehaviour {
 		SceneManager.LoadScene ("Main Menu Scene");
 	}
 
-	public void onClickBetaDemoScene(){
-		SceneManager.LoadScene ("Beta Demo Scene");
+	public void onClickDemoScene(){
+		SceneManager.LoadScene ("Final Demo Scene");
 	}
 
 	public void onClickControlsScene(){
@@ -30,8 +30,8 @@ public class SceneController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Escape)) {
-			if (SceneManager.GetActiveScene ().name == "Beta Demo Scene" || SceneManager.GetActiveScene ().name == "Controls Scene") {
+		if (Input.GetKeyDown (KeyCode.Escape) || controller.Action4.WasPressed) {
+			if (SceneManager.GetActiveScene ().name == "Final Demo Scene" || SceneManager.GetActiveScene ().name == "Controls Scene") {
 				SceneManager.LoadScene ("Main Menu Scene");
 			} else {
 				Application.Quit ();

@@ -46048,38 +46048,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1784817482868832, guid: f218b583d0a741849a07d0d6cf0052c6, type: 2}
-      propertyPath: m_Name
-      value: Main Camera
-      objectReference: {fileID: 0}
     - target: {fileID: 114353879833253468, guid: f218b583d0a741849a07d0d6cf0052c6,
         type: 2}
       propertyPath: playerT
       value: 
       objectReference: {fileID: 293343770}
-    - target: {fileID: 4354409307762128, guid: f218b583d0a741849a07d0d6cf0052c6, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 20265298486076884, guid: f218b583d0a741849a07d0d6cf0052c6,
-        type: 2}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20265298486076884, guid: f218b583d0a741849a07d0d6cf0052c6,
-        type: 2}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20265298486076884, guid: f218b583d0a741849a07d0d6cf0052c6,
-        type: 2}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20265298486076884, guid: f218b583d0a741849a07d0d6cf0052c6,
-        type: 2}
-      propertyPath: m_BackGroundColor.b
-      value: 0
+    - target: {fileID: 1784817482868832, guid: f218b583d0a741849a07d0d6cf0052c6, type: 2}
+      propertyPath: m_Name
+      value: Main Camera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f218b583d0a741849a07d0d6cf0052c6, type: 2}

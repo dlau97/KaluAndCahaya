@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 1166362170}
   - component: {fileID: 1166362169}
   m_Layer: 0
-  m_Name: txt_btnBetaDemo
+  m_Name: txt_btnDemo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,7 +576,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Play Beta
+  m_text: Play Demo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 88e7d0a2887b9b843a870bb051a8064f, type: 2}
   m_sharedMaterial: {fileID: 21149016750955872, guid: 88e7d0a2887b9b843a870bb051a8064f,
@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 1655727491}
   - component: {fileID: 1655727490}
   m_Layer: 0
-  m_Name: btn_PlayBeta
+  m_Name: btn_PlayDemo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1001,7 +1001,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 96534868}
-        m_MethodName: onClickBetaDemoScene
+        m_MethodName: onClickDemoScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
