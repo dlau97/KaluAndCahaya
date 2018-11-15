@@ -56,7 +56,7 @@ public class SuppCharController : MonoBehaviour {
 			lightDetectionRays [loop] = new Ray (transform.position, pRCTargets [loop].transform.position - transform.position);
 			Debug.DrawLine (transform.position,  pRCTargets [loop].transform.position, Color.red);
 
-			if (Physics.Raycast (lightDetectionRays [loop], out hit, 25f) && ((hit.transform.gameObject.tag == "PRCTarget") || hit.transform.gameObject.tag == "Player")) {
+			if (Physics.Raycast (lightDetectionRays [loop], out hit, 40f) && ((hit.transform.gameObject.tag == "PRCTarget") || hit.transform.gameObject.tag == "Player")) {
 				player.GetComponent<StealthManager> ().setPRCTargetVisible (loop, true);
 				Debug.DrawLine (hit.point, hit.point + Vector3.up * 2f, Color.green);
 				//Debug.Log ("Hit");

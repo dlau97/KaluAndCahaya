@@ -32,8 +32,7 @@ public class NightTriggerController : MonoBehaviour {
         if (Enemy.activeSelf == true)
         {
             getTimer = SetTimer;
-            getMoveSpeed = PlayerMovement.shadowWalkSpeedFactor;
-            PlayerMovement.shadowWalkSpeedFactor = 0;
+			PlayerMovement.DisableControls ();
 			PlayerMovement.EnableNightMode ();
 			ActivateFade.Activate = true;
         }
@@ -53,7 +52,7 @@ public class NightTriggerController : MonoBehaviour {
             Tree.transform.position = Vector3.MoveTowards(Tree.transform.position, ThicketEndPos, 2 * Time.deltaTime);
             if (getTimer <= 0.7)
             {
-                PlayerMovement.shadowWalkSpeedFactor = getMoveSpeed;
+				PlayerMovement.EnableControls ();
                 Enemy.SetActive(false);
             }
 			if (ActivateFade.fadeInTimer > 0f )
