@@ -15,11 +15,15 @@ public class NightTriggerController : MonoBehaviour {
     public float getMoveSpeed;
     public MoveEnemyController MoveEnemy;
     public Vector3 ThicketEndPos = new Vector3(208.5f, 0.8f, 3.4f);
+	public FadeEffectController ActivateFade;
+
+	public Material daySkybox, nightSkybox;
 
 	// Use this for initialization
 	void Start () {
         SupportCharacter.SetActive(false);
         Tree.SetActive(false);
+		RenderSettings.skybox = daySkybox;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +35,9 @@ public class NightTriggerController : MonoBehaviour {
             getMoveSpeed = PlayerMovement.shadowWalkSpeedFactor;
             PlayerMovement.shadowWalkSpeedFactor = 0;
 			PlayerMovement.EnableNightMode ();
+			ActivateFade.Activate = true;
         }
+
         SupportCharacter.SetActive(true);
         Tree.SetActive(true);
         MoveEnemy.NightTriggered = true;
@@ -50,6 +56,10 @@ public class NightTriggerController : MonoBehaviour {
                 PlayerMovement.shadowWalkSpeedFactor = getMoveSpeed;
                 Enemy.SetActive(false);
             }
+			if (ActivateFade.fadeInTimer > 0f )
+			{
+				RenderSettings.skybox = nightSkybox;
+			}
         }
 	}
 }

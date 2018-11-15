@@ -18,7 +18,7 @@ public class RestartLevelController : MonoBehaviour {
 	void Update () {
         if (Fallen == true)
         {
-			if (ActivateFade.fadeOutTimer == 0f )
+			if (ActivateFade.fadeInTimer > 0f )
             {
                 Player.transform.position = CheckPointLocation;
                 Fallen = false;

@@ -52,7 +52,6 @@ public class FadeEffectController : MonoBehaviour {
             if (fadeOutTimer <= 0f)
             {
                 fadeInTimer = SetTimer;
-				fadeOutTimer = 0f;
             }
         }
         if (fadeInTimer > 0f)
