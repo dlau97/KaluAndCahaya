@@ -18,7 +18,6 @@ public class MainCharacterController : MonoBehaviour
 	public float moveSpeed = 6f;
 	public float crawlSpeed = 3f;
 	public float shadowWalkSpeedFactor = 0.6f;
-	private bool inShadows = false;
 	private float actualSpeed;
 
 	public float jumpForce = 3.5f;
