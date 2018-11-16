@@ -22,7 +22,7 @@ public class CheckpointManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		if (Vector3.Magnitude (this.gameObject.transform.position - player.transform.position) <= 12f) {
+		if (Vector3.Magnitude (this.gameObject.transform.position - player.transform.position) <= 20f) {
 			Fireflies.SetActive (true);
 		} else {
 			Fireflies.SetActive (false);

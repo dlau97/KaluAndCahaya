@@ -57,7 +57,7 @@ public class BullyController : MonoBehaviour {
 			GameObject.Find ("Support Character").GetComponent<SuppCharController> ().EnableControls ();
 			gameOver = false;
 			currentAlertTime = alertTime;
-			this.transform.position = initialPos;
+			//this.transform.position = initialPos;
 			charAnim.SetInteger ("State", 0);
 		}
 		if (alerted == true && gameOver == false) {
@@ -111,9 +111,9 @@ public class BullyController : MonoBehaviour {
 		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (dir), Time.deltaTime * rotationSpeed);
 	}
 	void moveTowardPlayer(){
-		if (playerDistance >= 2f) {
-			transform.position = Vector3.MoveTowards (transform.position, playerT.position, moveTowardPlayerSpeed * Time.deltaTime);
-		}
+		
+		this.transform.position = Vector3.MoveTowards (this.transform.position, playerT.position, moveTowardPlayerSpeed * Time.deltaTime);
+
 	}
 
 	void checkPlayerDistance(){

@@ -111,16 +111,23 @@ public class MainCharacterController : MonoBehaviour
 		Vector3 movement = Vector3.zero;
 		if (xInput == 0f && zInput == 0f) {
 			if (crawling == false) {
-				charAnim.SetInteger ("State", 0);
+				if (playerInLight == false && nightMode == true) {
+					charAnim.SetInteger ("State", 10);
+					//PLayer idle in shadow
+				} else {
+					charAnim.SetInteger ("State", 0);
+					//player idle in light
+				}
 			} else {
 				charAnim.SetInteger ("State", 8);
+				//player idle whilst crawling
 			}
 		} else {
 			if (crawling == false) {
 				if (playerInLight == false && nightMode == true) {
 					movement = new Vector3 (xInput, 0f, zInput) * Time.deltaTime * actualSpeed * shadowWalkSpeedFactor;
-					//charAnim.SetInteger ("State", 4);
-					//Debug.Log ("player in shadows");
+					charAnim.SetInteger ("State", 4);
+					Debug.Log ("player in shadows");
 				} else {
 					movement = new Vector3 (xInput, 0f, zInput) * Time.deltaTime * actualSpeed;
 					charAnim.SetInteger ("State", 1);
