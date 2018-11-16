@@ -13150,6 +13150,11 @@ Prefab:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: b5ffe3dfd13d4634b8bcdf454283777a, type: 3}
+    - target: {fileID: 137474562458493530, guid: 91c38ee08f3b6b744a5d90096283952d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6224ae93ef7cf8d448043d3e7a6f78ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91c38ee08f3b6b744a5d90096283952d, type: 2}
   m_IsPrefabAsset: 0
@@ -65802,6 +65807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightSource: {fileID: 1176036441}
+  IndirectLight: {fileID: 0}
   SupportCharacter: {fileID: 546071980}
   Tree: {fileID: 1667558453}
   SetTimer: 1
@@ -65809,6 +65815,8 @@ MonoBehaviour:
   Enemy: {fileID: 808633450}
   PlayerMovement: {fileID: 324215070}
   getMoveSpeed: 0
+  MoveEnemy: {fileID: 0}
+  ThicketEndPos: {x: 208.5, y: 0.8, z: 3.4}
 --- !u!65 &2018563705
 BoxCollider:
   m_ObjectHideFlags: 0
