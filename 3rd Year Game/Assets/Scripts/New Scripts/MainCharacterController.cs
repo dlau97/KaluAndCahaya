@@ -18,7 +18,6 @@ public class MainCharacterController : MonoBehaviour
 	public float moveSpeed = 6f;
 	public float crawlSpeed = 3f;
 	public float shadowWalkSpeedFactor = 0.6f;
-	private bool inShadows = false;
 	private float actualSpeed;
 
 	public float jumpForce = 3.5f;
@@ -52,6 +51,9 @@ public class MainCharacterController : MonoBehaviour
 	private bool nightMode = false;
 
 	private GameObject standingCollider;
+
+	[SerializeField]
+	private bool underTrunk = false;
 
 
 
@@ -109,16 +111,23 @@ public class MainCharacterController : MonoBehaviour
 		Vector3 movement = Vector3.zero;
 		if (xInput == 0f && zInput == 0f) {
 			if (crawling == false) {
-				charAnim.SetInteger ("State", 0);
+				if (playerInLight == false && nightMode == true) {
+					charAnim.SetInteger ("State", 10);
+					//PLayer idle in shadow
+				} else {
+					charAnim.SetInteger ("State", 0);
+					//player idle in light
+				}
 			} else {
 				charAnim.SetInteger ("State", 8);
+				//player idle whilst crawling
 			}
 		} else {
 			if (crawling == false) {
 				if (playerInLight == false && nightMode == true) {
 					movement = new Vector3 (xInput, 0f, zInput) * Time.deltaTime * actualSpeed * shadowWalkSpeedFactor;
-					//charAnim.SetInteger ("State", 4);
-					//Debug.Log ("player in shadows");
+					charAnim.SetInteger ("State", 4);
+					Debug.Log ("player in shadows");
 				} else {
 					movement = new Vector3 (xInput, 0f, zInput) * Time.deltaTime * actualSpeed;
 					charAnim.SetInteger ("State", 1);
@@ -196,7 +205,7 @@ public class MainCharacterController : MonoBehaviour
 				disableJump = true;
 				disableTNR = true;
 				standingCollider.SetActive (false);
-			} else {
+			} else if(crawling == true && underTrunk == false){
 				charAnim.SetInteger ("State", 9); //Stand
 				crawling = false;
 				startCrawlingSquishTime = Time.time;
@@ -287,6 +296,9 @@ public class MainCharacterController : MonoBehaviour
 	}
 	public void EnableNightMode(){
 		nightMode = true;
+	}
+	public void UnderTrunk(bool b){
+		underTrunk = b;
 	}
 
 		

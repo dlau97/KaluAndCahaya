@@ -1,52 +1,27 @@
 fileFormatVersion: 2
-guid: de8f8fed4adeb2d47979979b3d4852ae
+guid: 06cbb623b620c41428f3d56f3b07c8f8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCube2
-    100004: pCube3
-    100006: pCube4
-    100008: pCube5
-    100010: pSphere1
-    100012: pSphere2
-    100014: //RootNode
-    400000: pCube1
-    400002: pCube2
-    400004: pCube3
-    400006: pCube4
-    400008: pCube5
-    400010: pSphere1
-    400012: pSphere2
-    400014: //RootNode
-    2100000: lambert1
-    2300000: pCube1
-    2300002: pCube2
-    2300004: pCube3
-    2300006: pCube4
-    2300008: pCube5
-    2300010: pSphere1
-    2300012: pSphere2
-    3300000: pCube1
-    3300002: pCube2
-    3300004: pCube3
-    3300006: pCube4
-    3300008: pCube5
-    3300010: pSphere1
-    3300012: pSphere2
-    4300000: pCube1
-    4300002: pCube2
-    4300004: pCube3
-    4300006: pCube4
-    4300008: pSphere1
-    4300010: pCube5
-    4300012: pSphere2
-  externalObjects: {}
+    100000: node_id3
+    100002: //RootNode
+    400000: node_id3
+    400002: //RootNode
+    2100000: Material_77
+    2300000: node_id3
+    3300000: node_id3
+    4300000: node_id3
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_77
+    second: {fileID: 2100000, guid: b8cda83d5b07c5141b884ca3cf686cf8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -72,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

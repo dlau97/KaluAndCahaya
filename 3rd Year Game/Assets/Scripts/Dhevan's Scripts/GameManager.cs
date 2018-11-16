@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using InControl;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -26,6 +27,14 @@ public class GameManager : MonoBehaviour {
 				pausePanel.SetActive(true);
 				Time.timeScale = 0f;
 
+				if (Input.GetKeyDown (KeyCode.Escape) || controller.Action4.WasPressed) {
+					if (SceneManager.GetActiveScene ().name == "Final Demo Scene" || SceneManager.GetActiveScene ().name == "Controls Scene") {
+						SceneManager.LoadScene ("Main Menu Scene");
+					} else {
+						Application.Quit ();
+					}
+				}
+
 			} else {
 				//Unpause game and hide pause menu.
 				gamePaused = false;
@@ -33,6 +42,8 @@ public class GameManager : MonoBehaviour {
 				Time.timeScale = 1;
 			}
 		}
+
+
 	}
 
 	void pauseGame(){

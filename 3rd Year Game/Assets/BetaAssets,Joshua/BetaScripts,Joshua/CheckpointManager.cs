@@ -5,10 +5,13 @@ using UnityEngine;
 public class CheckpointManager : MonoBehaviour {
 
     public RestartLevelController LevelController;
+	public GameObject Fireflies;
+	private GameObject player;
 
 	// Use this for initialization
 	void Start () {
-		
+		player = GameObject.Find ("Player");
+		Fireflies.SetActive (false);
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -19,6 +22,10 @@ public class CheckpointManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+		if (Vector3.Magnitude (this.gameObject.transform.position - player.transform.position) <= 20f) {
+			Fireflies.SetActive (true);
+		} else {
+			Fireflies.SetActive (false);
+		}
 	}
 }
