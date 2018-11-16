@@ -52,6 +52,9 @@ public class MainCharacterController : MonoBehaviour
 
 	private GameObject standingCollider;
 
+	[SerializeField]
+	private bool underTrunk = false;
+
 
 
 	// Use this for initialization
@@ -195,7 +198,7 @@ public class MainCharacterController : MonoBehaviour
 				disableJump = true;
 				disableTNR = true;
 				standingCollider.SetActive (false);
-			} else {
+			} else if(crawling == true && underTrunk == false){
 				charAnim.SetInteger ("State", 9); //Stand
 				crawling = false;
 				startCrawlingSquishTime = Time.time;
@@ -286,6 +289,9 @@ public class MainCharacterController : MonoBehaviour
 	}
 	public void EnableNightMode(){
 		nightMode = true;
+	}
+	public void UnderTrunk(bool b){
+		underTrunk = b;
 	}
 
 		
